@@ -23,7 +23,21 @@ namespace RockPaperScissorGame
 
         static void Game() 
         {
+            string inputPlayer, inputCPU;
+            int randomInt;
+
+            Console.WriteLine("choose between Rock, Paper and Scissors: ");
+            inputPlayer = Console.Readline();
+
+            Random rnd = new Random();
+
+            randomInt = rnd.Next(1, 4);
+
+            switch (randomInt) 
+            {
             
+            }
+
         }
 
         static void WinPercentage() 
