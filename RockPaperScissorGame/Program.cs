@@ -25,9 +25,12 @@ namespace RockPaperScissorGame
         {
             string inputPlayer, inputCPU;
             int randomInt;
+            int scorePlayer = 0;
+            int scoreCPU = 0;
 
             Console.WriteLine("choose between Rock, Paper and Scissors: ");
             inputPlayer = Console.Readline();
+            inputPlayer = inputPlayer.ToUpper();
 
             Random rnd = new Random();
 
@@ -35,7 +38,18 @@ namespace RockPaperScissorGame
 
             switch (randomInt) 
             {
-            
+                case 1:
+                    inputCPU = "ROCK";
+                    break;
+                case 2:
+                    inputCPU = "PAPER";
+                    break;
+                case 3:
+                    inputCPU = "SCISSORS";
+                    break;
+                default:
+                    Console.WriteLine("Invalid entry!");
+                    break;
             }
 
         }
