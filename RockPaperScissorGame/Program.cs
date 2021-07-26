@@ -136,17 +136,33 @@ namespace RockPaperScissorGame
         
         static decimal WinPercentage() 
         {
-        Console.WriteLine("How many games did you play? ");
-        decimal num1 = Convert.ToDecimal(Console.ReadLine());
+        bool calculate = true;
 
-        Console.WriteLine("How many games did you win? ");
-        decimal num2 = Convert.ToDecimal(Console.ReadLine());
+        while (calculate == true)
+        {
+            Console.WriteLine("How many games did you play? ");
+            decimal num1 = Convert.ToDecimal(Console.ReadLine());
 
-        decimal winPercentage = num2 / num1 * 100;
-        Console.WriteLine("Your winning percentage is " + winPercentage + "%\n");
+            Console.WriteLine("How many games did you win? ");
+            decimal num2 = Convert.ToDecimal(Console.ReadLine());
 
+            decimal winPercentage = num2 / num1 * 100;
+            Console.WriteLine("Your winning percentage is " + winPercentage + "%\n");
 
+            Console.WriteLine("Do you want to calculate another winning percentage?(y/n)");
+            string percentage = Console.ReadLine();
+            if (percentage == "y")
+            {
+                calculate = true;
+            }
+            else if (percentage == "n")
+            {
+                calculate = false;
+            }
+
+        }
         Console.ReadLine();
     }
     }
-}
+
+
