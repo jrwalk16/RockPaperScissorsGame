@@ -11,22 +11,31 @@ namespace RockPaperScissorGame
             Console.WriteLine("2) Calculate your winning percentage");
             Console.WriteLine("3) Exit");
             Console.WriteLine("Enter a number to choose an option: ");
-            string option = Console.ReadLine();
+            int option = Convert.ToInt32(Console.ReadLine());
 
-            switch (option) :
-            { 
+            switch (option)
+            {
                 case 1:
-                    option
+                    Game();
+                    break;
+
+                case 2:
+                    WinPercentage();
+                    break;
+                case 3:
+                    Console.WriteLine("Goodbye");
+                    return;
+                    
             }
 
             Console.ReadLine();
         }
 
-        static void Game()
+     static void Game()
         {
             string inputPlayer, inputCPU;
             int randomInt;
-           
+
             bool playAgain = true;
 
             while (playAgain)
@@ -40,7 +49,7 @@ namespace RockPaperScissorGame
 
 
                     Console.WriteLine("choose between Rock, Paper and Scissors: ");
-                    inputPlayer = Console.Readline();
+                    inputPlayer = Console.ReadLine();
                     inputPlayer = inputPlayer.ToUpper();
 
                     Random rnd = new Random();
@@ -106,8 +115,10 @@ namespace RockPaperScissorGame
                         default:
                             Console.WriteLine("Invalid entry!");
                             break;
+
                     }
 
+                    Console.WriteLine("\nSCORES:\tPLAYER:\t{0}\tCPU:\t{1}", scorePlayer, scoreCPU);
                 }
 
                 if (scorePlayer == 5)
@@ -125,44 +136,53 @@ namespace RockPaperScissorGame
                 {
                     playAgain = true;
                 }
-                else if (again == "n") 
+                else if (again == "n")
                 {
-                    playAgain = false;
+                     playAgain = false;
+                    Main(null);
+                    
                 }
+                
             }
         }
-    }   
-        
-        
-        static decimal WinPercentage() 
+
+
+
+
+         static void WinPercentage()
         {
-        bool calculate = true;
+            bool calculate = true;
 
-        while (calculate == true)
-        {
-            Console.WriteLine("How many games did you play? ");
-            decimal num1 = Convert.ToDecimal(Console.ReadLine());
-
-            Console.WriteLine("How many games did you win? ");
-            decimal num2 = Convert.ToDecimal(Console.ReadLine());
-
-            decimal winPercentage = num2 / num1 * 100;
-            Console.WriteLine("Your winning percentage is " + winPercentage + "%\n");
-
-            Console.WriteLine("Do you want to calculate another winning percentage?(y/n)");
-            string percentage = Console.ReadLine();
-            if (percentage == "y")
+            while (calculate == true)
             {
-                calculate = true;
-            }
-            else if (percentage == "n")
-            {
-                calculate = false;
-            }
+                Console.WriteLine("How many games did you play? ");
+                decimal num1 = Convert.ToDecimal(Console.ReadLine());
 
+                Console.WriteLine("How many games did you win? ");
+                decimal num2 = Convert.ToDecimal(Console.ReadLine());
+
+                decimal winPercentage = num2 / num1 * 100;
+                Console.WriteLine("Your winning percentage is " + winPercentage + "%\n");
+
+                Console.WriteLine("Do you want to calculate another winning percentage?(y/n)");
+                string percentage = Console.ReadLine();
+                if (percentage == "y")
+                {
+                    calculate = true;
+                }
+                else if (percentage == "n")
+                {
+                    calculate = false;
+                    Main(null);
+                }
+              
+            }
+            
         }
-        Console.ReadLine();
     }
-    }
+}
+
+
+        
 
 
