@@ -60,7 +60,10 @@ namespace RockPaperScissorGame
                     {
                         case 1:
                             inputCPU = "ROCK";
+                            var ROCK = new rock();
                             Console.WriteLine("Computer chose ROCK");
+
+                            Console.WriteLine("The computer has picked rock " + rock.count +" times.");
                             if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("DRAW\n\n");
@@ -78,7 +81,9 @@ namespace RockPaperScissorGame
                             break;
                         case 2:
                             inputCPU = "PAPER";
+                            var PAPER = new paper();
                             Console.WriteLine("Computer chose PAPER");
+                            Console.WriteLine("The computer has picked paper " + paper.count + " times.");
                             if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("CPU WINS!\n\n");
@@ -96,7 +101,9 @@ namespace RockPaperScissorGame
                             break;
                         case 3:
                             inputCPU = "SCISSORS";
+                            var SCISSORS = new scissors();
                             Console.WriteLine("Computer chose SCISSORS");
+                            Console.WriteLine("The computer has picked scissors " + scissors.count + " times.");
                             if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("PLAYER WINS!\n\n");
